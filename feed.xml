@@ -6,8 +6,8 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Aug 2016 14:08:38 -0400</pubDate>
-    <lastBuildDate>Tue, 23 Aug 2016 14:08:38 -0400</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 22:47:45 -0400</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 22:47:45 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -37,7 +37,7 @@
 
 &lt;p&gt;The scenario above posed the problem for the that I can only import the data to the Oracle database with import method using CSV files. In fact, I do not know if Oracle provide a command-line interface for administrator to quickly import data like MySQL or not. I am new to Oracle!&lt;/p&gt;
 
-&lt;p&gt;Definitely I could use &lt;code class=&quot;highlighter-rouge&quot;&gt;mysqldump&lt;/code&gt; to rip off data from the MySQL server, which is the fastest method I have known of. However, for some reason, I could not get the field delimiter and special character escaping in the CSV exported with &lt;code class=&quot;highlighter-rouge&quot;&gt;mysqldump&lt;/code&gt; to be imported properly into the Oracle database, so I ended up using &lt;a href=&quot;http://www.phpmyadmin.net/home_page/index.php&quot; title=&quot;PhpMyAdmin Homepage&quot;&gt;PhpMyAdmin&lt;/a&gt; to export the data. With millions of row to be exported, I needed to extend the time for the PHP script to execute and mentioned it on my &lt;a href=&quot;http://blog.ngocpham.info/blog/2014/02/19/increase-execution-time-for-phpmyadmin-tasks/&quot; title=&quot;My other post on extending PHP execution time&quot;&gt;previous&lt;/a&gt; post.&lt;/p&gt;
+&lt;p&gt;Definitely I could use &lt;code class=&quot;highlighter-rouge&quot;&gt;mysqldump&lt;/code&gt; to rip off data from the MySQL server, which is the fastest method I have known of. However, for some reason, I could not get the field delimiter and special character escaping in the CSV exported with &lt;code class=&quot;highlighter-rouge&quot;&gt;mysqldump&lt;/code&gt; to be imported properly into the Oracle database, so I ended up using &lt;a href=&quot;http://www.phpmyadmin.net/home_page/index.php&quot; title=&quot;PhpMyAdmin Homepage&quot;&gt;PhpMyAdmin&lt;/a&gt; to export the data. With millions of row to be exported, I needed to extend the time for the PHP script to execute and mentioned it on my &lt;a href=&quot;/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html&quot; title=&quot;My other post on extending PHP execution time&quot;&gt;previous&lt;/a&gt; post.&lt;/p&gt;
 
 &lt;p&gt;Having that execution time resolved, this export step is no hassle. Just go to PhpMyAdmin and choose “Export” with Quick method and format of ouput file is “CSV”, and you will have data files ready to be imported by SQL Developer.&lt;/p&gt;
 
