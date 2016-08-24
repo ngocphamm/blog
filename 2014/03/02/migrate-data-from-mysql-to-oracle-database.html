@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Migrate Data From MySQL to Oracle Database</title>
-  <meta name="description" content="Recently I had a task to convert a database from MySQL to Oracle. I am not sure how many of the records would a database could be call big but this one has 1...">
+  <meta name="description" content="Recently I had a task to convert a database from MySQL to Oracle. I am not sure how many records a database needs to be considered big, but this one has 15 t...">
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="canonical" href="/2014/03/02/migrate-data-from-mysql-to-oracle-database.html">
@@ -52,32 +52,33 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Recently I had a task to convert a database from MySQL to Oracle. I am not sure how many of the records would a database could be call <em>big</em> but this one has 15 tables; few of them have 2-5 million rows, and one has over 20 million. It was a fun time for me figuring out the “best” method to deal with the situation. It is definitely not the best method for everyone, but I think it would be useful for some.</p>
+    <p>Recently I had a task to convert a database from MySQL to Oracle. I am not sure how many records a database needs to be considered <em>big</em>, but this one has 15 tables; few of them have 2-5 million rows, and one has over 20 million. It was a fun time for me figuring out the “best” method to deal with the situation. It is definitely not the best method for everyone, but I think it would be useful for some.</p>
 
-<p>My scenario:</p>
+<p>My situation:</p>
 
 <ul>
   <li>I DO NOT have admin access to the Oracle database server and use <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html" title="Oracle SQL Developer Homepage">SQL Developer</a> to connect to the database</li>
   <li>I DO have admin access to the MySQL server</li>
+  <li>I DO NOT have access to <em>premium</em> tools for this job, so just free stuff</li>
 </ul>
 
 <!-- more -->
 
-<p>Now let’s do it!</p>
+<p>Let’s do it!</p>
 
-<h2 id="convert-tables-structures">Convert tables’ structures</h2>
-<p>This step can be done in various methods, I suppose. However, I found a program called <a href="http://razorsql.com/" title="RazorSQL Homepage">RazorSQL</a> that can deal with various types of database, including MySQL and Oracle. When I open connections to both databases, I can actually use the Convert Table(s) method provided by RazorSQL to convert both table structure and data between types of database.</p>
+<h2 id="convert-tables-structures">Convert tables structures</h2>
+<p>This step can be done in various methods, I suppose. However, I found an application called <a href="http://razorsql.com/" title="RazorSQL Homepage">RazorSQL</a> that can deal with various types of database, including MySQL and Oracle. When I open connections to both databases, I can actually use the <strong>Convert Table(s)</strong> feature in RazorSQL to convert both table structure and data between types of database.</p>
 
-<p>Here I use it to convert only the table structures (the reason not to convert the data also will be explained shortly). All you need to do is to choose the MySQL database, right-click the database then “Tables” on the left sidebar and choose “Database Conversion &gt; Convert [Multiple] Table” with the configuration similar to this screenshot, specifying connection to the Oracle database.</p>
+<p>Here I use it to convert only the table structures (the reason not to migrate the data will be explained shortly). All you need to do is to choose the MySQL database, right-click the database then “Tables” on the left sidebar and choose “Database Conversion &gt; Convert [Multiple] Table” with the configuration similar to this screenshot below.</p>
 
 <p><img src="/assets/images/RazorSQL_Convert_Tables.png" alt="Convert Table Structures with RazorSQL" /></p>
 
 <h2 id="export-the-data">Export the data</h2>
-<p>As mentioned above, the RazorSQL program does provide the data conversion. However, the method was not so good, in my opinion. I failed everytime I tried after a few thousand of records. I guess it is not stable enough, or it is not for like million-record tables.</p>
+<p>As mentioned above, RazorSQL does provide the data conversion. However, the method was not so good, in my opinion. Everytime I tried, it failed after a few thousand of records. I guess it is not stable enough, or it is not for million-record tables.</p>
 
-<p>The scenario above posed the problem for the that I can only import the data to the Oracle database with import method using CSV files. In fact, I do not know if Oracle provide a command-line interface for administrator to quickly import data like MySQL or not. I am new to Oracle!</p>
+<p>Thus, now I can only import the data to the Oracle database using CSV files. In fact, I do not know if Oracle provide a command-line interface for administrator to quickly import data, like MySQL <code class="highlighter-rouge">LOAD DATA INFILE</code> statement, or not. Fortunately, SQL Developer supports importing data from CSV files.</p>
 
-<p>Definitely I could use <code class="highlighter-rouge">mysqldump</code> to rip off data from the MySQL server, which is the fastest method I have known of. However, for some reason, I could not get the field delimiter and special character escaping in the CSV exported with <code class="highlighter-rouge">mysqldump</code> to be imported properly into the Oracle database, so I ended up using <a href="http://www.phpmyadmin.net/home_page/index.php" title="PhpMyAdmin Homepage">PhpMyAdmin</a> to export the data. With millions of row to be exported, I needed to extend the time for the PHP script to execute and mentioned it on my <a href="/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html" title="My other post on extending PHP execution time">previous</a> post.</p>
+<p>Definitely I could use <code class="highlighter-rouge">mysqldump</code> to take data from the MySQL server, which is the fastest method I have known of. However, for some reason, I could not get the field delimiter and special character escaping in the CSV exported with <code class="highlighter-rouge">mysqldump</code> to be imported properly into the Oracle database, so I ended up using <a href="http://www.phpmyadmin.net/home_page/index.php" title="PhpMyAdmin Homepage">PhpMyAdmin</a> to export the data. With millions of row to be exported, I needed to extend the time for the PHP script to execute, and mentioned it on my <a href="/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html" title="My other post on extending PHP execution time">previous</a> post.</p>
 
 <p>Having that execution time resolved, this export step is no hassle. Just go to PhpMyAdmin and choose “Export” with Quick method and format of ouput file is “CSV”, and you will have data files ready to be imported by SQL Developer.</p>
 
@@ -87,21 +88,21 @@
 <p><img src="/assets/images/SQL_Developer_Import_Data.png" alt="SQL Developer Actions Menu" /></p>
 
 <h2 id="specify-import-options-for-the-csv-file-pointed-step-1-of-the-wizard">Specify import options for the CSV file pointed (step 1 of the wizard)</h2>
-<p>Basically, what you should care about might only the two things: the header option (to tell if you have the first row as the fields’ headers or not), and the encoding of the file (where I chose UTF-8 for best handling of special, foreign characters).</p>
+<p>Basically, what you should care about might be only two things: the header option (to tell if you have the first row as the fields’ headers or not), and the encoding of the file (where I chose UTF-8 for best handling of special, foreign characters).</p>
 
 <p><img src="/assets/images/Oracle_Import_Wizard.png" alt="First step Import Wizard" /></p>
 
 <h2 id="choose-the-correct-mapping-to-the-table-fields-being-imported-into-step-4-of-the-wizard">Choose the correct mapping to the table fields being imported into (step 4 of the wizard)</h2>
-<p>Step 2 &amp; 3 &amp; 5 of the wizard have nothing special, just click “Next”. In step 4, you need to correctly map the fields in the CSV file to the fields in the table. I had CSV files with no header row, so I specified the mapping method to be “Position”.</p>
+<p>Step 2 &amp; 3 &amp; 5 of the wizard have nothing special, so just click “Next”. In step 4, you need to correctly map the fields in the CSV file to the fields in the table. I had CSV files with no header row, so I specified the mapping method to be “Position”.</p>
 
 <p><img src="/assets/images/Column_Mapping.png" alt="Map the column" /></p>
 
 <h2 id="start-the-import">Start the import!</h2>
-<p>I noticed that the import speed greatly depended on the speed of the network I was using to connect to the Oracle database. When I was on a “slow” 10Mbps network, it took me about 30 minutes to finish importing of 2.7 million records. With similar amount of time, when I was on a high speed network (that closes to the database, actually), SQL Developer could import over 20 million rows.</p>
+<p>I noticed that import speed greatly depended on the speed of the network I was using to connect to the Oracle database. When I was on a “slow” 10Mbps network, it took me about 30 minutes to finish importing of 2.7 million records. With a similar amount of time, when I was on a high speed network (~100Mbps, which also closes to the database, actually), SQL Developer could import over 20 million rows.</p>
 
-<p>I recommend to do this import task when you have plenty of time, say, overnight.</p>
+<p>I recommend doing this import task when you have plenty of time, say, overnight.</p>
 
-<p>Thank you for reading this! I hope it will help database newbies like me to get an overview of converting data from MySQL to Oracle database. Please do not hesitate to leave comments!</p>
+<p>Thank you for reading this! I hope it will help database newbies like me to get an overview of converting data from MySQL to Oracle database.</p>
 
 
   </div>
