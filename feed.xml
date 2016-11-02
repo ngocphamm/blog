@@ -4,10 +4,10 @@
     <title>Knock knock!</title>
     <description>My personal thoughts. Mostly babbling. Sometimes technical.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Nov 2016 15:02:27 -0400</pubDate>
-    <lastBuildDate>Wed, 02 Nov 2016 15:02:27 -0400</lastBuildDate>
+    <link>https://blog.ngocpham.info/</link>
+    <atom:link href="https://blog.ngocpham.info/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 02 Nov 2016 15:23:16 -0400</pubDate>
+    <lastBuildDate>Wed, 02 Nov 2016 15:23:16 -0400</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;Here I use it to convert only the table structures (the reason not to migrate the data will be explained shortly). All you need to do is to choose the MySQL database, right-click the database then “Tables” on the left sidebar and choose “Database Conversion &amp;gt; Convert [Multiple] Table” with the configuration similar to this screenshot below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/RazorSQL_Convert_Tables.png&quot; alt=&quot;Convert Table Structures with RazorSQL&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.ngocpham.info/assets/images/RazorSQL_Convert_Tables.png&quot; alt=&quot;Convert Table Structures with RazorSQL&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;export-the-data&quot;&gt;Export the data&lt;/h2&gt;
 &lt;p&gt;As mentioned above, RazorSQL does provide the data conversion. However, the method was not so good, in my opinion. Everytime I tried, it failed after a few thousand of records. I guess it is not stable enough, or it is not for million-record tables.&lt;/p&gt;
@@ -45,17 +45,17 @@
 &lt;h2 id=&quot;choose-the-import-wizard&quot;&gt;Choose the import wizard&lt;/h2&gt;
 &lt;p&gt;It should be under the “Actions” menu when you open a table. It will ask you to point to the exported CSV file. You can also use some other file format as &lt;code class=&quot;highlighter-rouge&quot;&gt;xls&lt;/code&gt; of Microsoft Excel.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/SQL_Developer_Import_Data.png&quot; alt=&quot;SQL Developer Actions Menu&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.ngocpham.info/assets/images/SQL_Developer_Import_Data.png&quot; alt=&quot;SQL Developer Actions Menu&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;specify-import-options-for-the-csv-file-pointed-step-1-of-the-wizard&quot;&gt;Specify import options for the CSV file pointed (step 1 of the wizard)&lt;/h2&gt;
 &lt;p&gt;Basically, what you should care about might be only two things: the header option (to tell if you have the first row as the fields’ headers or not), and the encoding of the file (where I chose UTF-8 for best handling of special, foreign characters).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Oracle_Import_Wizard.png&quot; alt=&quot;First step Import Wizard&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.ngocpham.info/assets/images/Oracle_Import_Wizard.png&quot; alt=&quot;First step Import Wizard&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;choose-the-correct-mapping-to-the-table-fields-being-imported-into-step-4-of-the-wizard&quot;&gt;Choose the correct mapping to the table fields being imported into (step 4 of the wizard)&lt;/h2&gt;
 &lt;p&gt;Step 2 &amp;amp; 3 &amp;amp; 5 of the wizard have nothing special, so just click “Next”. In step 4, you need to correctly map the fields in the CSV file to the fields in the table. I had CSV files with no header row, so I specified the mapping method to be “Position”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Column_Mapping.png&quot; alt=&quot;Map the column&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.ngocpham.info/assets/images/Column_Mapping.png&quot; alt=&quot;Map the column&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;start-the-import&quot;&gt;Start the import!&lt;/h2&gt;
 &lt;p&gt;I noticed that import speed greatly depended on the speed of the network I was using to connect to the Oracle database. When I was on a “slow” 10Mbps network, it took me about 30 minutes to finish importing of 2.7 million records. With a similar amount of time, when I was on a high speed network (~100Mbps, which also closes to the database, actually), SQL Developer could import over 20 million rows.&lt;/p&gt;
@@ -66,8 +66,8 @@
 
 </description>
         <pubDate>Sun, 02 Mar 2014 12:25:54 -0500</pubDate>
-        <link>http://localhost:4000/2014/03/02/migrate-data-from-mysql-to-oracle-database.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/03/02/migrate-data-from-mysql-to-oracle-database.html</guid>
+        <link>https://blog.ngocpham.info/2014/03/02/migrate-data-from-mysql-to-oracle-database.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2014/03/02/migrate-data-from-mysql-to-oracle-database.html</guid>
         
         <category>MySQL,</category>
         
@@ -98,8 +98,8 @@
 &lt;a href=&quot;http://stackoverflow.com/questions/1263680/maximum-execution-time-in-phpmyadmin&quot;&gt;http://stackoverflow.com/questions/1263680/maximum-execution-time-in-phpmyadmin&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 19 Feb 2014 14:53:08 -0500</pubDate>
-        <link>http://localhost:4000/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html</guid>
+        <link>https://blog.ngocpham.info/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html</guid>
         
         <category>PHP,</category>
         
@@ -126,8 +126,8 @@
 
 </description>
         <pubDate>Tue, 18 Feb 2014 11:20:28 -0500</pubDate>
-        <link>http://localhost:4000/2014/02/18/resolve-google-chrome-update-error-12-on-os-x.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/02/18/resolve-google-chrome-update-error-12-on-os-x.html</guid>
+        <link>https://blog.ngocpham.info/2014/02/18/resolve-google-chrome-update-error-12-on-os-x.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2014/02/18/resolve-google-chrome-update-error-12-on-os-x.html</guid>
         
         <category>Google</category>
         
@@ -219,8 +219,8 @@ total processes:  10
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 30 Mar 2012 02:54:00 -0400</pubDate>
-        <link>http://localhost:4000/2012/03/30/configure-php-fpm-status-page-for-serverdensity-monitoring.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2012/03/30/configure-php-fpm-status-page-for-serverdensity-monitoring.html</guid>
+        <link>https://blog.ngocpham.info/2012/03/30/configure-php-fpm-status-page-for-serverdensity-monitoring.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2012/03/30/configure-php-fpm-status-page-for-serverdensity-monitoring.html</guid>
         
         <category>Nginx,</category>
         
@@ -241,15 +241,15 @@ total processes:  10
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Up_movie_poster.jpg&quot; alt=&quot;Image from Flickr user jdxyw - 4860504888&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.ngocpham.info/assets/images/Up_movie_poster.jpg&quot; alt=&quot;Image from Flickr user jdxyw - 4860504888&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The story begins with the fortuitous meeting between Carl, a quiet little boy, and an energetic girl named Ellie who has the common interest with him in becoming an explorer just like the famous Charles F. Muntz. Ellie has a desire to have a house that overlooks Paradise Falls in South America. They then wed and live in the house where they first met. One day, when they find they cannot have a child, they decide to save money to have a trip to Paradise Falls, but, for many reasons, they are unable to make it till the day Ellie dies. Living alone in an old house in a developing city and being forced to move, old Carl decides to keep his promise to Ellie by using thousands of balloons to make his house “fly”. Accidentally, he takes a little boy called Russell who is trying to get his final merit badge for “Assisting the Elderly” from Carl, with him to Paradise Falls, where he gets more troubles than he expected. Walking with the floating house to the falls, they meet a beautiful and rarely-seen bird, Kevin, and a dog that can speak, Dug. Subsequently, they discover that Charles Muntz is living near and trying to catch Kevin for his fame. However, Carl only wants to keep his promise by bringing the house, partly burnt by Muntz before, to the falls, leaving Russell and Kevin. But when he eventually reaches the falls, he finds a diary of Ellie in which she thanked him for her greatest adventure of marriage to him. Carl and Russell then help Kevin to escape from Muntz back to her chicks. After returning to the city, Carl goes to Russell’s Senior Explorer ceremony  and presents him with the final badge, the one that Ellie gave him the day they met.&lt;/p&gt;
 
 &lt;p&gt;Many films by PIXAR have proven that they always know how to make a good CGI film with simple and lovely lines of drawing. Apart from these features, “Up” is also a touching story of love. In a world where people seem to do everything to meet their objective, the story about a man who tries to keep his promise to his beloved as well as keep his companions safe is really emotive. Great plot and lovely imageries accompanied by suitable soundtracks make the film one of the best films voted by Internet users (Internet Movie Database).&lt;/p&gt;
 </description>
         <pubDate>Fri, 10 Dec 2010 14:29:15 -0500</pubDate>
-        <link>http://localhost:4000/2010/12/10/review-movie-up.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2010/12/10/review-movie-up.html</guid>
+        <link>https://blog.ngocpham.info/2010/12/10/review-movie-up.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2010/12/10/review-movie-up.html</guid>
         
         <category>English,</category>
         
@@ -300,8 +300,8 @@ ruby ./script/server -b 192.168.1.234 -p 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figur
 
 </description>
         <pubDate>Sat, 06 Nov 2010 15:19:59 -0400</pubDate>
-        <link>http://localhost:4000/2010/11/06/install-ruby-rails-debian.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2010/11/06/install-ruby-rails-debian.html</guid>
+        <link>https://blog.ngocpham.info/2010/11/06/install-ruby-rails-debian.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2010/11/06/install-ruby-rails-debian.html</guid>
         
         <category>Linux,</category>
         
@@ -365,8 +365,8 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 &lt;p&gt;PS: I still wonder about the size of menu or tab bar of Aptana. I think it’s too thick. In Windows, Aptana Editor could show 34 lines of code but in Ubuntu it shows only 30 lines. If someone has the fix, please inform me. Thank you!&lt;/p&gt;
 </description>
         <pubDate>Sat, 01 May 2010 16:17:30 -0400</pubDate>
-        <link>http://localhost:4000/2010/05/01/aptana-studio-204-ubuntu-1004-64bit.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2010/05/01/aptana-studio-204-ubuntu-1004-64bit.html</guid>
+        <link>https://blog.ngocpham.info/2010/05/01/aptana-studio-204-ubuntu-1004-64bit.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2010/05/01/aptana-studio-204-ubuntu-1004-64bit.html</guid>
         
         <category>Aptana</category>
         
@@ -403,8 +403,8 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 &lt;p&gt;&lt;em&gt;Collected from UpdateSofts forum&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 14 Apr 2010 10:32:21 -0400</pubDate>
-        <link>http://localhost:4000/2010/04/14/valuable-tips-for-english-study.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2010/04/14/valuable-tips-for-english-study.html</guid>
+        <link>https://blog.ngocpham.info/2010/04/14/valuable-tips-for-english-study.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2010/04/14/valuable-tips-for-english-study.html</guid>
         
         <category>English,</category>
         
@@ -517,8 +517,8 @@ nameserver 208.67.220.220 - example IP address of secondary name  server&lt;/cod
 &lt;a href=&quot;http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/ref-guide/s1-networkscripts-interfaces.html&quot;&gt;http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/ref-guide/s1-networkscripts-interfaces.html&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 13 Apr 2010 11:12:15 -0400</pubDate>
-        <link>http://localhost:4000/2010/04/13/configure-network-interfaces-configuration-files-linux.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2010/04/13/configure-network-interfaces-configuration-files-linux.html</guid>
+        <link>https://blog.ngocpham.info/2010/04/13/configure-network-interfaces-configuration-files-linux.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2010/04/13/configure-network-interfaces-configuration-files-linux.html</guid>
         
         <category>Linux,</category>
         
@@ -554,7 +554,7 @@ nameserver 208.67.220.220 - example IP address of secondary name  server&lt;/cod
 
 &lt;p&gt;Find the driver &lt;strong&gt;NetGroup Packet Filter Driver&lt;/strong&gt;. Right click on the driver, move to tab Driver. Here you can** Start/Stop** the driver and change &lt;strong&gt;Startup mode to Automatically&lt;/strong&gt; as well.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Device_man.jpg&quot; alt=&quot;Windows 7 Device Manager&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog.ngocpham.info/assets/images/Device_man.jpg&quot; alt=&quot;Windows 7 Device Manager&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It’s done. Easy?&lt;/p&gt;
 
@@ -579,8 +579,8 @@ nameserver 208.67.220.220 - example IP address of secondary name  server&lt;/cod
 &lt;p&gt;If you see the line: &lt;strong&gt;&lt;em&gt;“The NetGroup Packet Filter Driver service was  started successfully.”&lt;/em&gt;&lt;/strong&gt;, it’s fine. You can view network device list immediately.&lt;/p&gt;
 </description>
         <pubDate>Tue, 13 Apr 2010 06:47:27 -0400</pubDate>
-        <link>http://localhost:4000/2010/04/13/gns3-network-device-list-problem.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2010/04/13/gns3-network-device-list-problem.html</guid>
+        <link>https://blog.ngocpham.info/2010/04/13/gns3-network-device-list-problem.html</link>
+        <guid isPermaLink="true">https://blog.ngocpham.info/2010/04/13/gns3-network-device-list-problem.html</guid>
         
         <category>CCNA,</category>
         
