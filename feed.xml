@@ -6,9 +6,9 @@
 </description>
     <link>https://blog.ngocpham.info/</link>
     <atom:link href="https://blog.ngocpham.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Nov 2016 15:23:16 -0400</pubDate>
-    <lastBuildDate>Wed, 02 Nov 2016 15:23:16 -0400</lastBuildDate>
-    <generator>Jekyll v3.3.0</generator>
+    <pubDate>Mon, 11 Dec 2017 22:23:29 -0500</pubDate>
+    <lastBuildDate>Mon, 11 Dec 2017 22:23:29 -0500</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Migrate Data From MySQL to Oracle Database</title>
@@ -86,7 +86,7 @@
 
 &lt;p&gt;After a while, I figured out where and what to set the configuration value for PhpMyAdmin. You need to open the file &lt;code class=&quot;highlighter-rouge&quot;&gt;config.inc.php&lt;/code&gt; in PhpMyAdmin root director and add the following line:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$cfg['ExecTimeLimit'] = 300;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ExecTimeLimit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;where, &lt;code class=&quot;highlighter-rouge&quot;&gt;300&lt;/code&gt; is the number of seconds you want the scrip to execute. For unlimited execution time, leave it as &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;.&lt;/p&gt;
 
@@ -158,9 +158,8 @@
 
 &lt;p&gt;Use a text editor, find the text “pm.status_path” and you may see there’s already a default value for this, but disabled. You can enable the option by simply removing the semicolon at the beginning of the line, having:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm.status_path = /status
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm.status_path = /status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This means you can access to a page, which will show you information about currently running PHP-FPM processes, at the address &lt;code class=&quot;highlighter-rouge&quot;&gt;http://yourwebservername/status&lt;/code&gt;.&lt;/p&gt;
 
@@ -172,7 +171,7 @@
 
 &lt;p&gt;Ubuntu manages configuration of sites hosted by means of “VirtualHost”, placed in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/sites-enabled/&lt;/code&gt;. Howerver, for the purpose of management, we only need the PHP-FPM status page to be accessible from localhost (and the ServerDensity plugin will do so), so it’s reasonable to add a location block to a global configuration file at &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/conf.d/default.conf&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;location /status {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;location /status {
 	fastcgi_pass 127.0.0.1:9000;
 	fastcgi_index index.php;
 	fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -180,27 +179,24 @@
 	allow 127.0.0.1;
 	deny all;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Save the file, reload nginx server with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/init.d/nginx reload&lt;/code&gt; and you will be able to access PHP-FPM status page at &lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1/status&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;You could test using the command:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://127.0.0.1/status
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://127.0.0.1/status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;and if you see something like this, you are all set!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;accepted conn:   123
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;accepted conn:   123
 pool:             www
 process manager:  dynamic
 idle processes:   9
 active processes: 1
 total processes:  10
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now you can just install the &lt;a href=&quot;http://plugins.serverdensity.com/php-fpm/&quot;&gt;PHP-FPM monitoring plugin&lt;/a&gt; by following the on-screen instruction. Wait for a few minutes before you can visually track how the PHP-FPM manages PHP requests to your server :)&lt;/p&gt;
 
@@ -208,15 +204,13 @@ total processes:  10
 
 &lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt; If you don’t see the visual graph of data for PHP-FPM after about 10 minutes, try to add the status page url to &lt;code class=&quot;highlighter-rouge&quot;&gt;sd-agent&lt;/code&gt; config file (mine at &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/sd-agent/config.cfg&lt;/code&gt;). You need a line similar to this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fpm_status_url = http://127.0.0.1/status
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fpm_status_url = http://127.0.0.1/status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Restart the sd-agent with the command below (if you are using Debian/Ubuntu) and you will be fine for sure!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc/init.d/sd-agent restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc/init.d/sd-agent restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 30 Mar 2012 02:54:00 -0400</pubDate>
         <link>https://blog.ngocpham.info/2012/03/30/configure-php-fpm-status-page-for-serverdensity-monitoring.html</link>
@@ -266,11 +260,11 @@ total processes:  10
 
 &lt;p&gt;The first thing you have to do is installing Ruby on Rails. It is pretty easy with “apt-get” command in Debian.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;sudo&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get install ruby libzlib-ruby rdoc irb rubygems rails eruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get install ruby libzlib-ruby rdoc irb rubygems rails eruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If there are some errors showed in this stage, you may have to install the “build-essential” package with this command&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;sudo&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get install build-essential&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get install build-essential&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;NB&lt;/strong&gt;: you have to add &lt;strong&gt;sudo&lt;/strong&gt; before the commands if you are not running as “root” user.&lt;/p&gt;
 
@@ -283,7 +277,7 @@ total processes:  10
 &lt;p&gt;To change this, you could simply call this command:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /path/to/app/directory
-ruby ./script/server -b 192.168.1.234 -p 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ruby ./script/server &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 192.168.1.234 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Instead of this by default:&lt;/p&gt;
 
@@ -291,9 +285,9 @@ ruby ./script/server -b 192.168.1.234 -p 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figur
 
 &lt;p&gt;This way, WeBrick server will start with the defined IP address and port&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;=&amp;gt; &lt;/span&gt;Booting WEBrick...
-&lt;span class=&quot;gp&quot;&gt;=&amp;gt; &lt;/span&gt;Rails 2.1.0 application started on http://192.168.1.234:3000
-&lt;span class=&quot;gp&quot;&gt;=&amp;gt; &lt;/span&gt;Ctrl-C to shutdown server; call with --help &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;options
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; Booting WEBrick...
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; Rails 2.1.0 application started on http://192.168.1.234:3000
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; Ctrl-C to shutdown server&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; call with &lt;span class=&quot;nt&quot;&gt;--help&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;options
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2010-11-06 15:35:55] INFO  WEBrick 1.3.1
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2010-11-06 15:35:55] INFO  ruby 1.8.7 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2008-08-11&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; i486-linux
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2010-11-06 15:35:55] INFO  WEBrick::HTTPServer#start: &lt;span class=&quot;nv&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2635 &lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -318,7 +312,7 @@ ruby ./script/server -b 192.168.1.234 -p 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figur
 
 &lt;!--more--&gt;
 
-&lt;h2 id=&quot;installing-aptana&quot;&gt;1. Installing Aptana&lt;/h2&gt;
+&lt;h2 id=&quot;1-installing-aptana&quot;&gt;1. Installing Aptana&lt;/h2&gt;
 
 &lt;p&gt;It’s pretty easy to have Aptana working on the system. You just have to download Aptana Standalone version from the website (choose 64-bit platform of course):&lt;a href=&quot;http://aptana.org/studio/download&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -328,11 +322,11 @@ ruby ./script/server -b 192.168.1.234 -p 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figur
 
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; your system must have Java Runtime Environment (JRE) installed to run Aptana. So just type &lt;strong&gt;&lt;em&gt;java&lt;/em&gt;&lt;/strong&gt; in Terminal to see if you have JRE installed. If Terminal says “command not found”, you have to install it with this command.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install sun-java6-jre&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install sun-java6-jre&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;When everything is installed successfully, you could go to unzipped folder of Aptana and run the Application by simply double clicking &lt;strong&gt;&lt;em&gt;AptanaStudio&lt;/em&gt;&lt;/strong&gt; file.&lt;/p&gt;
 
-&lt;h2 id=&quot;fix-some-problems-with-aptana-and-plugins&quot;&gt;2. Fix some problems with Aptana and Plugins&lt;/h2&gt;
+&lt;h2 id=&quot;2-fix-some-problems-with-aptana-and-plugins&quot;&gt;2. Fix some problems with Aptana and Plugins&lt;/h2&gt;
 
 &lt;h4 id=&quot;prob-1-subversion-and-javahl-library&quot;&gt;Prob 1: Subversion and JavaHL Library&lt;/h4&gt;
 
@@ -348,7 +342,7 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 &lt;p&gt;This error is sometimes so complicated according to &lt;a href=&quot;http://subclipse.tigris.org/wiki/JavaHL&quot;&gt;Subclipse wiki&lt;/a&gt;. But in my case, a simple fix can be the solution.
  add this line to &lt;strong&gt;AptanaStudio.ini&lt;/strong&gt; in the folder you unzipped from Installation step.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;-Djava.library.path&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/jni&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nt&quot;&gt;-Djava&lt;/span&gt;.library.path&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/jni&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;It works in my case. Hope it works in yours.&lt;/p&gt;
 
@@ -423,7 +417,7 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 
 &lt;p&gt;Here are 3 steps:&lt;/p&gt;
 
-&lt;h3 id=&quot;locate-the-network-configuration-file&quot;&gt;1. Locate the network configuration file&lt;/h3&gt;
+&lt;h3 id=&quot;1-locate-the-network-configuration-file&quot;&gt;1. Locate the network configuration file&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;- RHEL/CentOS/Fedora:&lt;/strong&gt; each interface has it own configuration file like&lt;/p&gt;
 
@@ -435,7 +429,7 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/etc/network/interfaces&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;determine-how-ip-address-is-assigned&quot;&gt;2. Determine how IP address is assigned&lt;/h3&gt;
+&lt;h3 id=&quot;2-determine-how-ip-address-is-assigned&quot;&gt;2. Determine how IP address is assigned&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;-  DHCP (Dynamic Host Configuration Protocol): **IP address will be assigned automatically by DHCP server (in a home/small network, DHCP server is your Router)&lt;/strong&gt;&lt;/p&gt;
 
@@ -481,7 +475,7 @@ gateway 192.168.1.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;I think all lines are quite clear. If you want to know what exactly they are, please visit the 2 links I paste at the end of this post.&lt;/p&gt;
 
-&lt;h3 id=&quot;add-dns-configuration-only-when--static-ip-used-in-step-2&quot;&gt;3. Add DNS configuration (only when  Static IP used in Step 2)**&lt;/h3&gt;
+&lt;h3 id=&quot;3-add-dns-configuration-only-when--static-ip-used-in-step-2&quot;&gt;3. Add DNS configuration (only when  Static IP used in Step 2)**&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -495,7 +489,7 @@ gateway 192.168.1.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nameserve 208.67.222.222 - example IP address of primary name server
 nameserver 208.67.220.220 - example IP address of secondary name  server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;restart-network-service-for-applying-new-configuration&quot;&gt;4. Restart network service for applying new configuration&lt;/h3&gt;
+&lt;h3 id=&quot;4-restart-network-service-for-applying-new-configuration&quot;&gt;4. Restart network service for applying new configuration&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;RHEL/CentOS/Fedora:&lt;/em&gt;&lt;/strong&gt; use the following command as &lt;strong&gt;root&lt;/strong&gt; user&lt;/li&gt;
@@ -507,7 +501,7 @@ nameserver 208.67.220.220 - example IP address of secondary name  server&lt;/cod
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Debian/Ubuntu:&lt;/em&gt;&lt;/strong&gt; you might need to enter root password&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo /etc/init.d/networking restart&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; /etc/init.d/networking restart&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;It’s done. Start pinging google.com to check your network is working.&lt;/p&gt;
 
