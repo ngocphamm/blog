@@ -6,8 +6,8 @@
 </description>
     <link>https://blog.ngocpham.info/</link>
     <atom:link href="https://blog.ngocpham.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Dec 2017 22:23:29 -0500</pubDate>
-    <lastBuildDate>Mon, 11 Dec 2017 22:23:29 -0500</lastBuildDate>
+    <pubDate>Mon, 11 Dec 2017 22:31:34 -0500</pubDate>
+    <lastBuildDate>Mon, 11 Dec 2017 22:31:34 -0500</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -431,7 +431,7 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 
 &lt;h3 id=&quot;2-determine-how-ip-address-is-assigned&quot;&gt;2. Determine how IP address is assigned&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;-  DHCP (Dynamic Host Configuration Protocol): **IP address will be assigned automatically by DHCP server (in a home/small network, DHCP server is your Router)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-  DHCP (Dynamic Host Configuration Protocol): IP address will be assigned automatically by DHCP server (in a home/small network, DHCP server is your Router)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;RHEL/CentOS/Fedora:&lt;/em&gt;&lt;/strong&gt; edit configuration file located in Step 1 to:&lt;/li&gt;
@@ -475,7 +475,7 @@ gateway 192.168.1.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;I think all lines are quite clear. If you want to know what exactly they are, please visit the 2 links I paste at the end of this post.&lt;/p&gt;
 
-&lt;h3 id=&quot;3-add-dns-configuration-only-when--static-ip-used-in-step-2&quot;&gt;3. Add DNS configuration (only when  Static IP used in Step 2)**&lt;/h3&gt;
+&lt;h3 id=&quot;3-add-dns-configuration-only-when--static-ip-used-in-step-2&quot;&gt;3. Add DNS configuration (only when  Static IP used in Step 2)&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
