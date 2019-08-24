@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,11 +10,7 @@
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="canonical" href="https://blog.ngocpham.info/2010/11/06/install-ruby-rails-debian.html">
   <link rel="alternate" type="application/rss+xml" title="Knock knock!" href="https://blog.ngocpham.info/feed.xml">
-</head>
-
-  <body>
-
-    <header class="site-header" role="banner">
+</head><body><header class="site-header" role="banner">
 
   <div class="wrapper">
 
@@ -40,32 +34,27 @@
 
   </div>
 
-</header>
-
-    <main class="page-content" aria-label="Content">
+</header><main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Install Ruby on Rails on Debian</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Install Ruby on Rails on Debian</h1>
     <p class="post-meta">
-      <time datetime="2010-11-06T15:19:59-04:00" itemprop="datePublished">
-        
-        Nov 6, 2010
-      </time>
-      </p>
+      <time class="dt-published" datetime="2010-11-06T15:19:59-04:00" itemprop="datePublished">Nov 6, 2010
+      </time></p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content e-content" itemprop="articleBody">
     <p>This article is showing how to install <strong>Ruby on Rails</strong> on a Debian-based host and configure** WeBrick** server (bundled with Ruby) to allow access from other hosts.</p>
 
 <p>The first thing you have to do is installing Ruby on Rails. It is pretty easy with “apt-get” command in Debian.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span><span class="nb">sudo</span><span class="o">)</span> apt-get install ruby libzlib-ruby rdoc irb rubygems rails eruby</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span><span class="nb">sudo</span><span class="o">)</span> apt-get <span class="nb">install </span>ruby libzlib-ruby rdoc irb rubygems rails eruby</code></pre></figure>
 
 <p>If there are some errors showed in this stage, you may have to install the “build-essential” package with this command</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span><span class="nb">sudo</span><span class="o">)</span> apt-get install build-essential</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span><span class="nb">sudo</span><span class="o">)</span> apt-get <span class="nb">install </span>build-essential</code></pre></figure>
 
 <p><strong>NB</strong>: you have to add <strong>sudo</strong> before the commands if you are not running as “root” user.</p>
 
@@ -94,15 +83,11 @@ ruby ./script/server <span class="nt">-b</span> 192.168.1.234 <span class="nt">-
 <span class="o">[</span>2010-11-06 15:35:55] INFO  WEBrick::HTTPServer#start: <span class="nv">pid</span><span class="o">=</span>2635 <span class="nv">port</span><span class="o">=</span>3000</code></pre></figure>
 
 
-  </div>
-
-  
+  </div><a class="u-url" href="/2010/11/06/install-ruby-rails-debian.html" hidden></a>
 </article>
 
       </div>
-    </main>
-
-    <footer class="site-footer">
+    </main><footer class="site-footer">
 
   <div class="wrapper">
 
@@ -141,8 +126,6 @@ ruby ./script/server <span class="nt">-b</span> 192.168.1.234 <span class="nt">-
 
   </div>
 
-</footer>
-
-  </body>
+</footer></body>
 
 </html>

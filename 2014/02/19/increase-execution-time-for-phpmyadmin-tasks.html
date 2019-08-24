@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,11 +10,7 @@
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="canonical" href="https://blog.ngocpham.info/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html">
   <link rel="alternate" type="application/rss+xml" title="Knock knock!" href="https://blog.ngocpham.info/feed.xml">
-</head>
-
-  <body>
-
-    <header class="site-header" role="banner">
+</head><body><header class="site-header" role="banner">
 
   <div class="wrapper">
 
@@ -40,23 +34,18 @@
 
   </div>
 
-</header>
-
-    <main class="page-content" aria-label="Content">
+</header><main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Increase Execution Time for PhpMyAdmin Tasks</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Increase Execution Time for PhpMyAdmin Tasks</h1>
     <p class="post-meta">
-      <time datetime="2014-02-19T14:53:08-05:00" itemprop="datePublished">
-        
-        Feb 19, 2014
-      </time>
-      </p>
+      <time class="dt-published" datetime="2014-02-19T14:53:08-05:00" itemprop="datePublished">Feb 19, 2014
+      </time></p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content e-content" itemprop="articleBody">
     <p>Sometimes you might have some time-consuming tasks to perform on PhpMyAdmin (I assume for some reasons, you do not have the access to MySQL command-line tools, which is much faster), but the web-based app does not let you get what you wanted because of the limit in execution time.</p>
 
 <p>Basically, a PHP script will be executed for a limited time set by <code class="highlighter-rouge">php.ini</code> directive <code class="highlighter-rouge">max_execution_time</code> (default = 30 seconds). However, PhpMyAdmin uses its own configuration value. That is why you <strong>cannot</strong> simply increase the value in <code class="highlighter-rouge">php.ini</code> file to tell PhpMyAdmin to run longer.</p>
@@ -74,15 +63,11 @@
 <p><strong>References</strong>
 <a href="http://stackoverflow.com/questions/1263680/maximum-execution-time-in-phpmyadmin">http://stackoverflow.com/questions/1263680/maximum-execution-time-in-phpmyadmin</a></p>
 
-  </div>
-
-  
+  </div><a class="u-url" href="/2014/02/19/increase-execution-time-for-phpmyadmin-tasks.html" hidden></a>
 </article>
 
       </div>
-    </main>
-
-    <footer class="site-footer">
+    </main><footer class="site-footer">
 
   <div class="wrapper">
 
@@ -121,8 +106,6 @@
 
   </div>
 
-</footer>
-
-  </body>
+</footer></body>
 
 </html>

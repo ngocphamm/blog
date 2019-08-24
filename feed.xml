@@ -6,9 +6,9 @@
 </description>
     <link>https://blog.ngocpham.info/</link>
     <atom:link href="https://blog.ngocpham.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Dec 2017 22:31:34 -0500</pubDate>
-    <lastBuildDate>Mon, 11 Dec 2017 22:31:34 -0500</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
+    <pubDate>Sat, 24 Aug 2019 14:30:16 -0400</pubDate>
+    <lastBuildDate>Sat, 24 Aug 2019 14:30:16 -0400</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
     
       <item>
         <title>Migrate Data From MySQL to Oracle Database</title>
@@ -260,11 +260,11 @@ total processes:  10
 
 &lt;p&gt;The first thing you have to do is installing Ruby on Rails. It is pretty easy with “apt-get” command in Debian.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get install ruby libzlib-ruby rdoc irb rubygems rails eruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby libzlib-ruby rdoc irb rubygems rails eruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If there are some errors showed in this stage, you may have to install the “build-essential” package with this command&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get install build-essential&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;build-essential&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;NB&lt;/strong&gt;: you have to add &lt;strong&gt;sudo&lt;/strong&gt; before the commands if you are not running as “root” user.&lt;/p&gt;
 
@@ -322,7 +322,7 @@ ruby ./script/server &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 192.168.1.
 
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; your system must have Java Runtime Environment (JRE) installed to run Aptana. So just type &lt;strong&gt;&lt;em&gt;java&lt;/em&gt;&lt;/strong&gt; in Terminal to see if you have JRE installed. If Terminal says “command not found”, you have to install it with this command.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install sun-java6-jre&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;sun-java6-jre&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;When everything is installed successfully, you could go to unzipped folder of Aptana and run the Application by simply double clicking &lt;strong&gt;&lt;em&gt;AptanaStudio&lt;/em&gt;&lt;/strong&gt; file.&lt;/p&gt;
 
@@ -438,8 +438,8 @@ java.library.path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /usr/lib/jvm/ja
 &lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;DEVICE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;eth0
-&lt;span class=&quot;nv&quot;&gt;ONBOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes
-&lt;span class=&quot;nv&quot;&gt;BOOTPROTO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dhcp&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;nv&quot;&gt;ONBOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BOOTPROTO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dhcp&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Debian/Ubuntu:&lt;/em&gt;&lt;/strong&gt; add below lines to configuration file located in Step 1&lt;/li&gt;
@@ -459,7 +459,7 @@ iface eth0 inet dhcp&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;span class=&quot;nv&quot;&gt;IPADDR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;192.168.1.200
 &lt;span class=&quot;nv&quot;&gt;NETMASK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;255.255.255.0
 &lt;span class=&quot;nv&quot;&gt;GATEWAY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;192.168.1.1
-&lt;span class=&quot;nv&quot;&gt;ONBOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;yes&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;nv&quot;&gt;ONBOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Debian/Ubuntu:&lt;/em&gt;&lt;/strong&gt;add below lines to configuration file located in Step 1&lt;/li&gt;
