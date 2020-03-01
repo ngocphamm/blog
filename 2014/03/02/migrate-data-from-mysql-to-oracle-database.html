@@ -8,8 +8,8 @@
   <meta name="description" content="Recently I had a task to convert a database from MySQL to Oracle. I am not sure how many records a database needs to be considered big, but this one has 15 t...">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://blog.ngocpham.info/2014/03/02/migrate-data-from-mysql-to-oracle-database.html">
-  <link rel="alternate" type="application/rss+xml" title="Knock knock!" href="https://blog.ngocpham.info/feed.xml">
+  <link rel="canonical" href="https://blog.ngoc.dev/2014/03/02/migrate-data-from-mysql-to-oracle-database.html">
+  <link rel="alternate" type="application/rss+xml" title="Knock knock!" href="https://blog.ngoc.dev/feed.xml">
 </head><body><header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -65,7 +65,7 @@
 
 <p>Here I use it to convert only the table structures (the reason not to migrate the data will be explained shortly). All you need to do is to choose the MySQL database, right-click the database then “Tables” on the left sidebar and choose “Database Conversion &gt; Convert [Multiple] Table” with the configuration similar to this screenshot below.</p>
 
-<p><img src="https://blog.ngocpham.info/assets/images/RazorSQL_Convert_Tables.png" alt="Convert Table Structures with RazorSQL" /></p>
+<p><img src="https://blog.ngoc.dev/assets/images/RazorSQL_Convert_Tables.png" alt="Convert Table Structures with RazorSQL" /></p>
 
 <h2 id="export-the-data">Export the data</h2>
 <p>As mentioned above, RazorSQL does provide the data conversion. However, the method was not so good, in my opinion. Everytime I tried, it failed after a few thousand of records. I guess it is not stable enough, or it is not for million-record tables.</p>
@@ -79,17 +79,17 @@
 <h2 id="choose-the-import-wizard">Choose the import wizard</h2>
 <p>It should be under the “Actions” menu when you open a table. It will ask you to point to the exported CSV file. You can also use some other file format as <code class="highlighter-rouge">xls</code> of Microsoft Excel.</p>
 
-<p><img src="https://blog.ngocpham.info/assets/images/SQL_Developer_Import_Data.png" alt="SQL Developer Actions Menu" /></p>
+<p><img src="https://blog.ngoc.dev/assets/images/SQL_Developer_Import_Data.png" alt="SQL Developer Actions Menu" /></p>
 
 <h2 id="specify-import-options-for-the-csv-file-pointed-step-1-of-the-wizard">Specify import options for the CSV file pointed (step 1 of the wizard)</h2>
 <p>Basically, what you should care about might be only two things: the header option (to tell if you have the first row as the fields’ headers or not), and the encoding of the file (where I chose UTF-8 for best handling of special, foreign characters).</p>
 
-<p><img src="https://blog.ngocpham.info/assets/images/Oracle_Import_Wizard.png" alt="First step Import Wizard" /></p>
+<p><img src="https://blog.ngoc.dev/assets/images/Oracle_Import_Wizard.png" alt="First step Import Wizard" /></p>
 
 <h2 id="choose-the-correct-mapping-to-the-table-fields-being-imported-into-step-4-of-the-wizard">Choose the correct mapping to the table fields being imported into (step 4 of the wizard)</h2>
 <p>Step 2 &amp; 3 &amp; 5 of the wizard have nothing special, so just click “Next”. In step 4, you need to correctly map the fields in the CSV file to the fields in the table. I had CSV files with no header row, so I specified the mapping method to be “Position”.</p>
 
-<p><img src="https://blog.ngocpham.info/assets/images/Column_Mapping.png" alt="Map the column" /></p>
+<p><img src="https://blog.ngoc.dev/assets/images/Column_Mapping.png" alt="Map the column" /></p>
 
 <h2 id="start-the-import">Start the import!</h2>
 <p>I noticed that import speed greatly depended on the speed of the network I was using to connect to the Oracle database. When I was on a “slow” 10Mbps network, it took me about 30 minutes to finish importing of 2.7 million records. With a similar amount of time, when I was on a high speed network (~100Mbps, which also closes to the database, actually), SQL Developer could import over 20 million rows.</p>
